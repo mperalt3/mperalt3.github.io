@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Fuego de Dioses</title>
+    <script src="//cdn.jsdelivr.net/phaser/2.2.2/phaser.min.js"></script>
+    <style type="text/css">
+        body {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+
+<script type="text/javascript">
+
+var game = new Phaser.Game(800, 600, Phaser.CANVAS, 'FireGods', { preload: preload, create: create, update: update, render: render});
+
+var background;
+var book;
+var instructions;
+var p_instructions;
+
+
+function preload() {
+    //game.load.audio('voice', 'assetsAudio/h51.m4a');
+    game.load.image('background', 'assetsImages/background-image.jpg');
+    game.load.spritesheet('book', 'assetsImages/book.png',411,572);
+    game.load.spritesheet('instructions', 'assetsImages/instruction-button.png',531,532);
+    p_instructions =[game.world.centerX-50, game.world.centerY];
+}
+function create() {
+    game.stage.backgroundColor = "#ffffff";
+    background=game.add.image(0,0, 'background');
+    instructions=game.add.button(p_instructions[0],p_instructions[1], 'instructions', goInstructions, this, 1,0,2);
+    instructions.anchor.setTo(0.5);
+    instructions.alpha=0;
+    book=game.add.button(game.world.centerX,game.world.centerY, 'book', goPlay, this, 1,0,2);
+    book.anchor.setTo(0.5);
+    
+    instructions_a=game.add.tween(instructions).to( { alpha: 1 }, 2000, "Linear", true, 1000);
+    
+
+}
+function update(){ 
+}
+
+function render() {
+
+}
+function goInstructions(){
+    window.open("instructions.html", "_self");
+}
+function goPlay(){
+    window.open("s0.html", "_self");
+}
+
+</script>
+
+</body>
+</html>

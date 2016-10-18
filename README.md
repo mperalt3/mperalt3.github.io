@@ -1,8 +1,6 @@
 # Fire of Gods. An Interactive Fiction
 
-This is a interactive fiction game developed by Macarena Peralta, build in Phaser engine. 
-
-This is an assigment for 'Videogame development' class of Pontificia Universidad Católica de Chile. October 2016. 
+This is an interactive fiction game developed by Macarena Peralta, build in Phaser engine. Part of an assigment for 'Videogame development' class of Pontificia Universidad Católica de Chile. October 2016. 
 
 ### Sinopsis
 
