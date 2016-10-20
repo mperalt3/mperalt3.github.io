@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Fuego de Dioses</title>
+    <script src="//cdn.jsdelivr.net/phaser/2.2.2/phaser.min.js"></script>
+    <style type="text/css">
+        body {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+
+<script type="text/javascript">
+
+var game = new Phaser.Game(800, 600, Phaser.CANVAS, 'FireGods', { preload: preload, create: create, update: update, render: render});
+
+var background;
+var back;
+var text1;
+var text2;
+var p_text1;
+var p_text2;
+
+var menu;
+var right;
+var p_menu;
+var p_right;
+
+function preload() {
+    //game.load.audio('voice', 'assetsAudio/h51.m4a');
+    game.load.image('back', 'assetsImages/background.jpg');
+    game.load.image('text1', 'assetsImages/s4/text1.png');
+    game.load.image('text2', 'assetsImages/s4/text2.png');
+    game.load.spritesheet('menu', 'assetsImages/menu_button.png',115,32);
+    game.load.spritesheet('right', 'assetsImages/right.png',106,106);
+
+    p_text1 =[game.world.centerX, game.world.centerY];
+    p_text2 =[game.world.centerX, game.world.centerY];
+    p_menu=[110, 20];
+    p_right=[737,540];
+}
+function create() {
+    game.stage.backgroundColor = "#ffffff";
+    back=game.add.image(0,0, 'back');
+
+    menu=game.add.button(p_menu[0],p_menu[1], 'menu', goStart, this, 1,0,2);
+    menu.anchor.setTo(0.5);
+    right=game.add.button(p_right[0],p_right[1], 'right', goRight, this, 1,0,2);
+    right.anchor.setTo(0.5);
+
+    text1=game.add.image(p_text1[0], p_text1[1], 'text1');
+    text1.anchor.setTo(0.5);
+    text2=game.add.image(p_text2[0], p_text2[1], 'text2');
+    text2.anchor.setTo(0.5);
+
+    text1.alpha = 0;
+    text2.alpha = 0;
+
+    text1_a=game.add.tween(text1).to( { alpha: 1 }, 1000, "Linear", true, 500);
+    text2_a=game.add.tween(text2).to( { alpha: 1 }, 1000, "Linear", true, 2000);
+
+}
+function update(){ 
+}
+function render() {
+    //game.debug.inputInfo(32, 32);
+}
+function goStart(){
+    window.open("start.html", "_self");
+}
+function goRight(){
+    window.open("s5.html", "_self");
+}
+
+</script>
+
+</body>
+</html>

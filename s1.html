@@ -20,16 +20,13 @@ var background;
 var back;
 var text1;
 var text2;
-
 var p_text1;
 var p_text2;
-
 
 var menu;
 var right;
 var p_menu;
 var p_right;
-
 
 function preload() {
     //game.load.audio('voice', 'assetsAudio/h51.m4a');
@@ -64,13 +61,11 @@ function create() {
     text1_a=game.add.tween(text1).to( { alpha: 1 }, 1000, "Linear", true, 500);
     text2_a=game.add.tween(text2).to( { alpha: 1 }, 1000, "Linear", true, 2000);
 
-
 }
 function update(){ 
 }
-
 function render() {
-    game.debug.inputInfo(32, 32);
+    //game.debug.inputInfo(32, 32);
 }
 function goStart(){
     window.open("start.html", "_self");
